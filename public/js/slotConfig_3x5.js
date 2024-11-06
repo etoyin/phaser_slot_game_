@@ -1,7 +1,7 @@
 // 3x5 20 lines, line buttons modern
 
 var slotConfig_3x5 = {
-    symbolSizeY: 170,
+    symbolSizeY: 200,
     spinTime: 2000,                 // time, milliseconds
     winShowTime: 3000,              // time, milliseconds
     showWinCoinsMessage: false,    // displaying a message with the amount of money won
@@ -548,16 +548,16 @@ var slotConfig_3x5 = {
     reels: [
         {//0
             symbolImages: ['small symbol 2-min', 'small symbol 3-min', 'big symbol 1-min', 'small symbol 2-min', 'big symbol 2-min', 'small symbol 1-min', 'small symbol 4-min', 'big symbol 3-min', 'small symbol 2-min', 'big symbol 4-min', 'scatter-min', 'small symbol 1-min'],
-            offsetX: -340,
-            offsetY: 5,
+            offsetX: -405,
+            offsetY: -40,
             windowImage: 'reel',    // not used
             windowsCount: 3,
             addSpinTime: 0, // additional spin time for reel milliseconds   
         },
         {//1
             symbolImages: ['small symbol 2-min', 'small symbol 1-min', 'small symbol 2-min', 'big symbol 2-min', 'small symbol 3-min', 'big symbol 1-min', 'small symbol 1-min', 'big symbol 3-min', 'big symbol 4-min', 'small symbol 4-min', 'scatter-min', 'small symbol 1-min', 'small symbol 2-min', 'small symbol 3-min', 'small symbol 4-min', 'small symbol 1-min', 'wild-min'],
-            offsetX: -170,
-            offsetY: 5,
+            offsetX: -205,
+            offsetY: -40,
             windowImage: 'reel',        // not used
             windowsCount: 3,
             addSpinTime: 100, // additional spin time for reel milliseconds   
@@ -565,23 +565,23 @@ var slotConfig_3x5 = {
         { // 2
             symbolImages: ['scatter-min', 'small symbol 2-min', 'big symbol 3-min', 'wild-min', 'small symbol 1-min', 'bonus-min', 'big symbol 2-min', 'bonus-min', 'small symbol 1-min', 'small symbol 3-min', 'big symbol 1-min', 'big symbol 4-min', 'small symbol 2-min', 'small symbol 4-min', 'wild-min'],
             offsetX: 0,
-            offsetY: 5,
+            offsetY: -40,
             windowImage: 'reel',        // not used
             windowsCount: 3,
             addSpinTime: 200, // additional spin time for reel milliseconds   
         },
         { // 3
             symbolImages: ['small symbol 1-min', 'bonus-min', 'small symbol 3-min', 'bonus-min', 'big symbol 1-min', 'big symbol 2-min', 'small symbol 2-min', 'wild-min', 'small symbol 1-min', 'big symbol 3-min', 'big symbol 4-min', 'small symbol 2-min', 'scatter-min', 'small symbol 1-min', 'small symbol 2-min', 'small symbol 4-min', 'wild-min'],
-            offsetX: 170,
-            offsetY: 5,
+            offsetX: 205,
+            offsetY: -40,
             windowImage: 'reel',        // not used
             windowsCount: 3,
             addSpinTime: 300, // additional spin time for reel milliseconds     
         },
         { // 4
             symbolImages: ['small symbol 1-min', 'bonus-min', 'small symbol 2-min', 'small symbol 1-min', 'wild-min', 'small symbol 3-min', 'big symbol 1-min', 'small symbol 1-min', 'big symbol 2-min', 'big symbol 4-min', 'wild-min', 'scatter-min', 'small symbol 2-min', 'big symbol 3-min', 'small symbol 4-min', 'wild-min', 'bonus-min'],
-            offsetX: 340,
-            offsetY: 5,
+            offsetX: 405,
+            offsetY: -40,
             windowImage: 'reel',        // not used
             windowsCount: 3,
             addSpinTime: 400, // additional spin time for reel milliseconds     
@@ -782,20 +782,20 @@ var slotConfig_3x5 = {
         //scene.debugreference.depth = 2000;
         //scene.debugreference.setAlpha(0.0);
 
-        scene.slot = scene.addSpriteLocPos('slot', -10, 25);
+        scene.slot = scene.addSpriteLocPos('slot', -10, -17);
         scene.slot.depth = -1;
 
         // WHere i worked on here etoyin//
-        scene.slot.displayWidth = 1000;
-        scene.slot.displayHeight = 630;
+        scene.slot.displayWidth = 1200;
+        scene.slot.displayHeight = 750;
 
         scene.bottomPanel = scene.addSpriteLocPos('bottom_panel', 0, 383);
         scene.bottomPanel.displayHeight = 230;
-        scene.paneljackpot = scene.addSpriteLocPos('jackpot zone-min', 0, -440);
+        scene.paneljackpot = scene.addSpriteLocPos('jackpot zone-min', 0, -485);
         scene.paneljackpot.setDepth(12);
         // Here too etoyin
-        scene.paneljackpot.displayWidth = 1000;
-        scene.paneljackpot.displayHeight = 350;
+        scene.paneljackpot.displayWidth = 750;
+        scene.paneljackpot.displayHeight = 250;
 
 
         scene.logo = scene.addSpriteLocPos('logo-min', -740, -400);

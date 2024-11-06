@@ -316,8 +316,8 @@ class Reel{
             symbSprite.name = symbName;                         // set name                
             symbSprite.setMask(gMask);                          // apply mask
             // I added width here eToyin
-            symbSprite.displayWidth = 160;
-            symbSprite.displayHeight = 160;
+            symbSprite.displayWidth = 200;
+            symbSprite.displayHeight = 200;
             var symbol = new SlotSymbol(this.scene, this, symbSprite, symbName + 'Blurred',  posY, this.animFrameRate);
             this.setIconAndAddAtTop(symbol)
             this.symbols.push(symbol);
