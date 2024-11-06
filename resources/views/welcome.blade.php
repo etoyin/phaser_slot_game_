@@ -14,6 +14,8 @@
             </script>
             <script src="/js/phaser.js"></script>
         <!-- Styles / Scripts -->
+
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
         
             <style type="text/css">
         
@@ -48,34 +50,8 @@
                     transform: translate(-50%,-50%);
                     z-index: -100;
                 }
-                #sign_in{
-                    position: absolute;
-                    background-color: #3a3a3993;
-                    z-index: 50;
-                    display: flex;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                }
-                body{
-                    position: relative;
-                }
-                #sign_in > div{
-                    align-items: center;
-                    margin: auto;
-                    width: 600px;
-                    vertical-align: middle;
-                    border-radius: 10px;
-                    border: 1px solid black;
-                    height: 300px;
-                    background-color: #444343;
-                    padding: 20px;
-                    text-align: center;
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                }
-                
-                h3{
+                                
+                /* h3{
                     font-size: 30px;
                     color: whitesmoke;
                     margin: 20px
@@ -114,14 +90,9 @@
 
                 button:hover {
                     background-color: #45a049;
-                }
+                } */
 
-                .form-div {
-                    padding: 20px;
-                    /* background-color: aqua; */
-                    width: 400px;
-                    margin: auto;
-                }
+                
                 #spinner-icon{
                     display: none
                 }
@@ -133,7 +104,7 @@
                 
             </style>
     </head>
-    <body class="">
+    <body class="relative">
     <!-- @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -146,19 +117,20 @@
                 <source src="/png/background.mp4" type="video/mp4"></source>
             </video>
         </div>
-        <div id="sign_in">
-            <div>
-                <h3>You've Won 3 Free Slot Spins</h3>
-                <h4>Win the Big Jackpot</h4>
-                <div class="form-div">
-                    <h5>Verify Your Email to Claim Your Spins</h5>
+        <div id="sign_in" class="absolute bg-black bg-opacity-70 flex top-0 left-0 w-full h-full z-50">
+            <div class="m-auto bg-gray-600 p-10 max-w-[700px] h-min rounded-lg bg-opacity-70 border border-black">
+                <h3 class="text-4xl text-center text-white font-bold">You've Won 3 Free Slot Spins</h3>
+                <h4 class="text-xl text-center font-semibold text-white">Win the Big Jackpot</h4>
+                <div class="mt-5 text-center p-3">
+                    <h5 class="text-white">Verify Your Email to Claim Your Spins</h5>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        <input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                        <input id="email" class="block mt-1 rounded w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
-                        <button type="submit" class="email_submit" id="submit" value="Verify">
+                        <button type="submit" class="my-3 w-full p-2 text-white font-semibold uppercase rounded hover:bg-[#45a049] bg-[#4CAF50] email_submit" id="submit" value="Verify">
                             Verify <i id="spinner-icon" class="las la-spinner"></i>
                         </button>
+                        <p class="">Email verified already? <a class="text-white" href="/login">Login</a></p>
                     </form>
                 </div>
             </div>

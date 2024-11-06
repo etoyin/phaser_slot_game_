@@ -17,9 +17,10 @@ class GameController extends Controller
         // }
 
         // if($user){
-            return view('welcome', [
-                // 'user'=>$user
-            ]);
+        if(Auth::check()){
+            return redirect(route('play', absolute: false));
+        }
+        return view('welcome');
         
         
     }

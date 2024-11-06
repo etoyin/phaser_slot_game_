@@ -7,21 +7,21 @@
 
         <!-- Email Address -->
         <div>
-            <x-input-label class="text-gray-200" for="email" :value="__('Email')" />
+            <x-input-label class="text-gray-100" for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error class="text-gray-200" :messages="$errors->get('email')" class="mt-2" />
+            <x-input-error class="text-gray-100" :messages="$errors->get('email')" class="mt-2" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label class="text-gray-200" for="password" :value="__('Password')" />
+            <x-input-label class="text-gray-100" for="password" :value="__('Password')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
                             name="password"
                             required autocomplete="current-password" />
 
-            <x-input-error class="text-gray-200" :messages="$errors->get('password')" class="mt-2" />
+            <x-input-error class="text-gray-100" :messages="$errors->get('password')" class="mt-2" />
         </div>
 
         <!-- Remember Me -->
@@ -35,7 +35,7 @@
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-200 hover:text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+                    {{ __('Forgot or don\'t have a password?') }}
                 </a>
             @endif
 
