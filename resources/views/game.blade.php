@@ -64,6 +64,8 @@
                 <source src="/png/background.mp4" type="video/mp4"></source>
             </video>
         </div>
+
+        <input type="hidden" id="user" value="{{ json_encode($user) }}">
         
         <script src="/js/slotConfig_3x5.js"></script>
         <script src="/js/mkutils.js"></script>
@@ -71,6 +73,19 @@
         <script src="/js/state_machine.js"></script>
         <script src="/js/slot_classes.js"></script>
         <script src="/js/slotGame.js"></script>
+        <script>
+            var h = JSON.parse(document.getElementById('user').value);
+            _new_user = h.new_user;
+            // console.log(h);
+            _update_new_user = (bool) => {
+                fetch('/update_new_user')
+                .then(res => res.json())
+                .then(res => {
+                    console.log(res);
+                });
+                // alert(bool);
+            }
+        </script>
         
     </body>
 </html>

@@ -150,6 +150,10 @@ class SlotGame extends Phaser.Scene{
         // const form = this.add.dom(this.gameWidth / 2, this.gameHeight / 2).createFromCache('submit_form');
         // modalContent.add(form);
 
+        if(_new_user){
+            slotConfig.reels_simulate = [8, 8, 3, 11, 1];
+        }
+
         this.centerX = (this.gameWidth / 2) + slotConfig.localOffsetX; // (slotGame.config.width / 2) + slotConfig.localOffsetX;
         this.centerY =(this.gameHeight / 2) + slotConfig.localOffsetY; // (slotGame.config.height / 2) + slotConfig.localOffsetY;
         this.useWild = (slotConfig.useWild && slotConfig.hasOwnProperty('wild') && slotConfig.wild !== null);
@@ -208,7 +212,7 @@ class SlotGame extends Phaser.Scene{
         // this.respin_clip = this.sound.add('respin_clip');
  
         // 6) controls
-        slotConfig.createControls(this, this.slotControls);
+        slotConfig.createControls(this, this.slotControls);        
         this.slotControls.init(slotConfig.selectedLines, true);
    
         // 7) state machine
@@ -277,6 +281,7 @@ class SlotGame extends Phaser.Scene{
         }, this);
 
         this.setCamera();
+        this.sendCount = 0;
     }
 
 
@@ -306,6 +311,23 @@ class SlotGame extends Phaser.Scene{
         // else{
         //     this.input.enabled = true;
         // }
+        // this.runSlot();
+        // this.scene.events.once(Phaser.Scenes.Events.BOOT, () => {
+        //     this.slotControls.slotSpinButton.emit('pointerdown');
+        // });
+
+        if(_new_user && this.spinCount < 1){
+            this.runSlot();
+            slotConfig.reels_simulate = null;
+        }
+
+        if(_new_user && this.spinCount > 1 && this.sendCount < 1){
+            _update_new_user(false);
+            this.sendCount++
+        }
+
+
+
         this.cTime = time;
         simpleTweener.update(delta);
         this.updateEvent.events.forEach((eW)=>{ if (eW != null && eW.action != null) eW.action.call(eW.context, time, delta); });

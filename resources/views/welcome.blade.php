@@ -50,47 +50,6 @@
                     transform: translate(-50%,-50%);
                     z-index: -100;
                 }
-                                
-                /* h3{
-                    font-size: 30px;
-                    color: whitesmoke;
-                    margin: 20px
-                }
-                h4{
-                    font-size: 20px;
-                    color: whitesmoke;
-                    margin: 10px
-                }
-                h5{
-                    font-size: 15px;
-                    color: whitesmoke;
-                    margin: 5px
-                }
-                input[type=email], select {
-                    width: 100%;
-                    padding: 12px 20px;
-                    margin: 8px 0;
-                    display: inline-block;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    box-sizing: border-box;
-                }
-
-                button {
-                    width: 100%;
-                    background-color: #4CAF50;
-                    color: white;
-                    padding: 14px 20px;
-                    margin: 8px 0;
-                    border: none;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    font-size: 20px;
-                }
-
-                button:hover {
-                    background-color: #45a049;
-                } */
 
                 
                 #spinner-icon{
@@ -105,11 +64,6 @@
             </style>
     </head>
     <body class="relative">
-    <!-- @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif -->
         <!-- remove or comment unused configs before publish -->
         <div class="fullscreen-video-container">
             <!-- Our video and text content will live here -->
@@ -135,62 +89,9 @@
                 </div>
             </div>
         </div>
-        <!-- <script>
-            let submit = document.getElementById('submit');
-            const validateEmail = (email) => {
-                return email.match(
-                    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                );
-            };
-            submit.addEventListener('click', function(e){
-                e.preventDefault();
-                let email = document.getElementById('email').value;
-
-                if(validateEmail(email)){
-                    document.querySelector("#spinner-icon").style.display = 'inline';
-                    let formData = new FormData();
-                    formData.append('email', email);
-                    // formData.append('_token', "{{csrf_token()}}");
-                    // fetch('http://localhost:8000/api/csrf-token')
-                    // .then(res => res.json())
-                    // .then(res => {
-                    //     const csrf_token = res.csrf_token;
-                    //     fetch('http://localhost:8000/api/register', {
-                    //         method: 'post',
-                    //         headers: {
-                    //             'Content-Type': 'application/x-www-form-urlencoded',
-                    //             'XSRF-TOKEN': csrf_token
-                    //         },
-                    //         body: formData
-                    //     })
-                    //     .then(res => res.json())
-                    //     .then(res => console.log(res))
-                    //     .catch(error => console.log(error))
-                    // })
-                    // .catch(error => {
-                    //     console.error('Error fetching CSRF token:', error);
-                    // })
-                    
-                    
-                    $.post('/register',
-                        {
-                            email: email
-                        },
-                        function(data, status){
-                            alert("Data: "+data+"\nStatus: "+ status)
-                        }
-                    );
-                    
-                }else{
-                    alert("Email is invalid!")
-                }
-            })
-            function doU (spinCount, loggedIn){
-                if(!loggedIn){
-                    alert("nmnmnmnm")
-                }
-            }
-        </script> -->
+        <script>
+            
+        </script>
         
         
     </body>

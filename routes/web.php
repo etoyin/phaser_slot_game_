@@ -14,6 +14,8 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/play', [GameController::class, 'game'])->name('play');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/update_new_user', [GameController::class, 'update_new_user']);
+
 });
 
 require __DIR__.'/auth.php';

@@ -1,6 +1,7 @@
 // 3x5 20 lines, line buttons modern
 
 var slotConfig_3x5 = {
+    load_spin_count: 0,
     symbolSizeY: 200,
     spinTime: 2000,                 // time, milliseconds
     winShowTime: 3000,              // time, milliseconds
@@ -31,7 +32,7 @@ var slotConfig_3x5 = {
     useWildInFirstPosition: false,              // substitute of the first symbol not allowed
     useLineBetMultiplier: true,                 // win multiplied by bet
     useLineBetFreeSpinMultiplier: false,        // free spins win multiplied by bet
-    defaultCoins: 100000,                       // default player credit 100 000
+    defaultCoins: 20,                       // default player credit 100 000
 
     localOffsetX: 0,                            // x offset from center for all scene objects
     localOffsetY: 70,                           // y offset from center for all scene objects
@@ -593,7 +594,8 @@ var slotConfig_3x5 = {
     // reels_simulate: [10, 10, 0, -1, -1],                // >=3 scatter win 
     // reels_simulate: [10, 10, 0, 12, 11],                // 5 scatter win 
     // reels_simulate: [-1, -1, 5, 1, 16],                  // jackpot 
-    reels_simulate: [8, 8, 3, 11, 1],                  // 3 scatters to make 3 free spins 
+    
+    // reels_simulate: [8, 8, 3, 11, 1],                  // 3 scatters to make 3 free spins 
 
     // just uncomment this piece of code and you will get 20 slot lines
     lines: [				// predefined  slot lines positions 0 - most bottom window on reels
