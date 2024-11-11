@@ -209,11 +209,11 @@ var slotConfig_3x5 = {
             name: 'button_menu_hover'
         },
         {
-            fileName: 'Volume_on.png',
+            fileName: 'on.png',
             name: 'button_speaker'
         },
         {
-            fileName: 'Volume_off.png',
+            fileName: 'off.png',
             name: 'button_speaker_off'
         },
         {
@@ -932,30 +932,35 @@ var slotConfig_3x5 = {
         //add money button
 
 
-        // slotControls.addmoneyButton = new SceneButton(scene, 'long-button', 'long-button-hover', true);
-        // slotControls.buttons.push(slotControls.addmoneyButton);
-        // slotControls.addmoneyButton.create(+1030, 410, 0.5, 0.5)
-        // slotControls.addmoneyButton.setDepth(depth);
-        // slotControls.addmoneyButton.addClickEvent(() => {
-        //     console.log('settings click');
-        //     var pu = scene.guiController.showPopUp(this.createaddmoneyPUHandle);
-        //     scene.soundController.playClip('button_click');
-        // }, this);
+        slotControls.addmoneyButton = new SceneButton(scene, 'button_plus', 'button_plus_hover', true);
+        slotControls.buttons.push(slotControls.addmoneyButton);
+        slotControls.addmoneyButton.create(-515, 320, 0.5, 0.5)
+        slotControls.addmoneyButton.setDepth(depth);
+        slotControls.addmoneyButton.size(50, 50);
+        slotControls.addmoneyButton.addClickEvent(() => {
+            console.log('settings click');
+            var pu = scene.guiController.showPopUp(this.createaddmoneyPUHandle);
+            scene.soundController.playClip('button_click');
+        }, this);
         // slotControls.addmoneyButton.setScale(30 , 30)
 
 
 
         // speaker button
-        slotControls.volumeButton = new SceneButton(scene, 'button_speaker', 'button_speaker_off', false);
-        slotControls.buttons.push(slotControls.volumesButton);
-        slotControls.volumeButton.create(-905, 392, 0.5, 0.5);
-        slotControls.volumeButton.size(50, 20)
-        slotControls.volumeButton.addClickEvent(() => {
-            var pu = scene.guiController.showPopUp(this.createInfoPUHandler);
-            scene.soundController.playClip('button_click');
-        }, this);
-        slotControls.volumeButton.button.setVisible(true);
-        slotControls.volumeButton.setDepth(depth);
+        // slotControls.volumeButton = new SceneButton(scene, 'button_speaker', 'button_speaker_off', false);
+        // slotControls.buttons.push(slotControls.volumesButton);
+        // slotControls.volumeButton.create(-905, 392, 0.5, 0.5);
+        // slotControls.volumeButton.size(50, 50);
+        // slotControls.volumeButton.addClickEvent(() => {
+        //     var pu = scene.guiController.showPopUp(this.createInfoPUHandler);
+        //     scene.soundController.playClip('button_click');
+        // }, this);
+        // slotControls.volumeButton.button.setVisible(true);
+        // slotControls.volumeButton.setDepth(depth);
+
+        // slotControls.volumeButton.clickEvent.add(() => { popup.scene.soundController.playClip('button_click', false); }, popup);
+        // slotControls.volumeButton.clickEvent.add(() => { popup.scene.soundController.soundOn(!popup.scene.soundController._soundOn); refreshIcons(popup); }, popup);
+        // if (!popup.scene.soundController._soundOn) slotControls.volumeButton.setPressed();
 
         // // rules button
         // slotControls.rulesButton = new SceneButton(scene, 'button_rules', 'button_rules_hover', false);
@@ -1064,11 +1069,15 @@ var slotConfig_3x5 = {
         slotControls.totalBetSumText.depth = depth;
         slotControls.totalBetSumText.setVisible(false);
 
-        slotControls.creditText = scene.add.bitmapText(scene.centerX - 680, scene.centerY + 343, 'gameFont_0', 'Balance', 47, 1).setOrigin(0.5);
+        slotControls.creditText = scene.add.bitmapText(scene.centerX - 680, scene.centerY + 373, 'gameFont_0', 'Balance', 47, 1).setOrigin(0.5);
         slotControls.creditText.depth = depth;
         slotControls.creditText.tint = 0xfcf465;
-        slotControls.creditSumText = scene.add.bitmapText(scene.centerX - 520, scene.centerY + 343, 'gameFont_0', '' + scene.slotPlayer.coins, 63, 1).setOrigin(0.5);
+        slotControls.creditSumText = scene.add.bitmapText(scene.centerX - 520, scene.centerY + 373, 'gameFont_0', '' + scene.slotPlayer.coins, 63, 1).setOrigin(0.5);
         slotControls.creditSumText.depth = depth;
+
+        slotControls.creditText = scene.add.bitmapText(scene.centerX - 680, scene.centerY + 313, 'gameFont_0', 'Add Money', 47, 1).setOrigin(0.5);
+        slotControls.creditText.depth = depth;
+        slotControls.creditText.tint = 0xfcf465;
 
         // slotControls.creditText = scene.add.bitmapText(scene.centerX + 1035, scene.centerY + 410, 'gameFont_1', 'Add Money', 43, 1).setOrigin(0.5);
         // slotControls.creditText.depth = depth;

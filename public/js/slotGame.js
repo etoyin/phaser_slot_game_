@@ -33,6 +33,7 @@ class SlotGame extends Phaser.Scene{
     // constructor
     constructor(){
         super("SlotGame"); // scene key 
+        this.isMuted = false;
     }
 
     loadSceneConfig()
@@ -149,6 +150,24 @@ class SlotGame extends Phaser.Scene{
 
         // const form = this.add.dom(this.gameWidth / 2, this.gameHeight / 2).createFromCache('submit_form');
         // modalContent.add(form);
+
+
+        this.sound.volume = 1; // Initial volume level
+
+        this.soundButton = this.add.image(55, 1000, 'button_speaker').setInteractive();
+        this.soundButton.scale = 0.65;
+        this.soundButton.setDepth(5);
+
+        this.soundButton.on('pointerdown', () => {
+            this.isMuted = !this.isMuted;
+            this.sound.mute = this.isMuted;
+
+            if (this.isMuted) {
+                this.soundButton.setTexture('button_speaker_off');
+            } else {
+                this.soundButton.setTexture('button_speaker');
+            }
+        })
 
         if(_new_user){
             slotConfig.reels_simulate = [8, 8, 3, 11, 1];
