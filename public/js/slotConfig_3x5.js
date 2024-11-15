@@ -103,22 +103,6 @@ var slotConfig_3x5 = {
             fileName: 'PanelTotalBet.png',
             name: 'panel_totalbet'
         },
-        // {
-        //     fileName: 'PanelLineBet.png',
-        //     name: 'panel_linebet'
-        // },
-        // {
-        //     fileName: 'PanelWin.png',
-        //     name: 'panel_win'
-        // },
-        // {
-        //     fileName: 'PanelLines.png',
-        //     name: 'panel_lines'
-        // },
-        // {
-        //     fileName: 'PanelBalance.png',
-        //     name: 'panel_balance'
-        // },
         {
             fileName: 'gui/PanelBalance.png',
             name: 'panel-addmoney'
